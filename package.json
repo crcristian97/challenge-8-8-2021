@@ -1,0 +1,11 @@
+{
+  "name": "lenovo-challenge",
+  "version": "1.0.0",
+  "description": "My approach to the Lenovo JS Challenge.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Cristian Cabrera",
+  "license": "ISC"
+}
