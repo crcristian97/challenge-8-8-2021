@@ -4,10 +4,10 @@ const question = require("./lib/question");
 class Solution {
   async run() {
     const name = await question("Please enter your name: ");
-    const age = parseInt(await question("Please enter your age: "));
-    const sex = await question("Please enter your sex (M/F): ");
-    const weight = parseFloat(await question("Please enter your weight (in Kg): "));
-    const height = parseFloat(await question("Please enter your height (in Mts): "));
+    const age = parseInt(await question("Please enter your age: ")) || 0;
+    const sex = await question("Please enter your sex (M/F): " ) || "M";
+    const weight = parseFloat(await question("Please enter your weight (in Kg): ")) || 0;
+    const height = parseFloat(await question("Please enter your height (in Mts): ")) || 0;
 
     const obj1 = new Person(name, age, sex, undefined, weight, height);
     const obj2 = new Person(name, age, sex, undefined);
@@ -20,7 +20,7 @@ class Solution {
     obj3.height = height;
 
     for (const obj of [obj1, obj2, obj3]) {
-      const personName = obj.name ?? "Anonymous person"
+      const personName = obj.name || "Anonymous person"
       const imcOutput = obj.calculateIMC()
       const isAdult = obj.isAdult()
       
